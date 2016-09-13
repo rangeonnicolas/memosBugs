@@ -1,0 +1,5 @@
+Error when installing the Rcurl package on ubuntu:
+
+Run these commands:
+apt-get -y build-dep libcurl4-gnutls-dev
+apt-get -y install libcurl4-gnutls-dev

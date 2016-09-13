@@ -1,0 +1,5 @@
+error installing pyhs2 python package by
+pip install pyhs2
+
+sudo apt-get install libsasl2-dev
+(from http://stackoverflow.com/questions/22838752/hadoop-python-client-driver-for-hiveserver2-fails-to-install)

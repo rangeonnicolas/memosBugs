@@ -1,0 +1,39 @@
+Django circular model reference
+
+as you can see in the docs, for exactly this reason it is possible to specify the foreign model as a string.
+team = models.ForeignKey('Team')
+
+------
+After a server reboot after a crash (after an OVH intervention):
+"could not connect to server: Connection refused
+	Is the server running on host 'localhost' (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?"
+
+watch in the logs:
+	sudo tail -f -n 200 /var/log/postgresql/postgresql-9.4-main.log
+if it says "could not create lock file "/var/run/postgresql/.s.PGSQL.5432.lock": Permission denied",
+then check the owner of /var/run/postgresql:
+sudo chown -R postgres:postgres /var/run/postgresql
+
+restart the service:
+sudo service postgresql restart
+
+wait until the logs says : "database system is ready to accept connections
+"
+
+------
+Hazardous operations on Models that will cause bugs when applying migrations:
+- transforming a parent class into an abstract parent class
+
+------
+'SafeText' object has no attribute 'status_code'
+
+the called view doesn't return a 'render()' or a 'HttpResponse()', (maybe it returns a loader.render_to_string(), which is not good. Should return a 'HttpResponse(loader.render_to_string())' )
+
+------
+“unable to open database file”
+
+modify permissions for db.sqlite3
+
+
+

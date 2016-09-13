@@ -1,0 +1,4 @@
+Call to undefined function pg_connect()
+
+sudo apt-get install php5-pgsql
+________________________

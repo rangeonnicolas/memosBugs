@@ -1,0 +1,3 @@
+add some rows to a dataframe:
+for i in range(5):
+    df.loc[i] = [randint(-1,1) for n in range(3)]

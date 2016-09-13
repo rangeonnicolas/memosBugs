@@ -1,0 +1,4 @@
+http://scratching.psybermonkey.net/2009/06/postgresql-how-to-reset-user-name.html
+
+pg_hba.conf se situe ici : /etc/postgresql/9.4/main/
+(il suffit parfois de remplacer 'ident' par 'trust', voir la doc http://www.postgresql.org/docs/9.1/static/auth-pg-hba-conf.html)
